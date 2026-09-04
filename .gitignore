@@ -1,3 +1,6 @@
+# Project only
+workbooks/
+
 .DS_Store
 db.json
 
