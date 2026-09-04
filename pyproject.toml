@@ -10,14 +10,15 @@
 #   - The folder inside 'src/'
 # ============================
 [project]
-name = "project1"
+name = "sheet-manager"
 version = "0.0.1"
-description = "project1"
+description = "sheet-manager"
 readme = "README.md"
 license = "MIT"
 authors = [{ name = "gaaiuss", email = "caio.gui.castro@gmail.com" }]
 requires-python = ">=3.14"
 dependencies = [
+    "openpyxl>=3.1.5",
     "python-dotenv>=1.1.0",
     "rich>=15.0.0",
 ]
@@ -48,6 +49,7 @@ ignore = [
     "ERA001", # Checks for commented-out Python code.
     "A004", # Shadowing Python Builtin.
     "CPY001", # Missing copyright notice at top of file.
+    "TC002", # Move third-party import into a type-checking block
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -82,6 +84,10 @@ exclude = [
 venv = ".venv"
 venvPath = "."
 executionEnvironments = [{ root = "src" }]
+
+# Rules disabled
+reportPossiblyUnboundVariable = "none"
+reportAssignmentType = "none"
 
 # ============================
 # Tests (Pytest)
